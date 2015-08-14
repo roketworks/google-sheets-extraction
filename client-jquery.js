@@ -11,7 +11,7 @@ var remoteJSON;
 jQuery.ajaxSetup({async:false});
 
 // Make AJAX call
-$.getJSON("http://dublin-spreadsheet.azurewebsites.net/", function (data){
+$.getJSON("http://sheets-example.azurewebsites.net", function (data){
 
 	remoteJSON = data; 
 	
