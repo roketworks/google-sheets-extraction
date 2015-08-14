@@ -28,13 +28,11 @@ http.createServer(function(req, res) {
 
             // Output the response from Google Sheets into my own desired format
             for (i = 0; i < rows.length; i++) {
-                if (rows[i].person != "Total:") {
-                    response.push({
-                        "label": rows[i].label,
-                        "val2": rows[i].val1,
-                        "val2": rows[i].val2
-                    });
-                }
+                response.push({
+                    "label": rows[i].label,
+                    "val2": rows[i].val1,
+                    "val2": rows[i].val2
+                });
             }
 
             res.end(JSON.stringify(response));
