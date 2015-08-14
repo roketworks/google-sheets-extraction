@@ -1,3 +1,4 @@
+
 // Only works with 1 chart on the page 
 // Get chart based on container class
 var data = $('.chart-block-container').attr('data-settings'); 
@@ -10,13 +11,15 @@ var remoteJSON;
 jQuery.ajaxSetup({async:false});
 
 // Make AJAX call
-$.getJSON("http://sheets-example.azurewebsites.net/", function (data){
+$.getJSON("http://dublin-spreadsheet.azurewebsites.net/", function (data){
 
 	remoteJSON = data; 
 	
 	// Empty arrays to add our new values
 	var newLabels = []; 
 	var newValues = [];
+	// Required for legend display and array needs to match values 
+	var newSeriesLabels = ['val1', 'val2'];
 	
 	// Loop round objects in the response data
 	for (var i = 0; i < remoteJSON.length; i++) {
@@ -31,6 +34,7 @@ $.getJSON("http://sheets-example.azurewebsites.net/", function (data){
 	// Update our JSON object pulled from contain div
 	jsonData.dataTable.sampleLabels = newLabels;
 	jsonData.dataTable.data = newValues;
+	jsonData.dataTable.seriesLabels = newSeriesLabels;
 	
 	// Stringify JSON to allow it to be stored in attribute
 	var newJSONString = JSON.stringify(jsonData);
