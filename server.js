@@ -30,8 +30,8 @@ http.createServer(function(req, res) {
             for (i = 0; i < rows.length; i++) {
                 response.push({
                     "label": rows[i].label,
-                    "val1": rows[i].val1,
-                    "val2": rows[i].val2
+                    "val1": Number(rows[i].val1),
+                    "val2": Number(rows[i].val2)
                 });
             }
 
