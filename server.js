@@ -30,7 +30,7 @@ http.createServer(function(req, res) {
             for (i = 0; i < rows.length; i++) {
                 response.push({
                     "label": rows[i].label,
-                    "val2": rows[i].val1,
+                    "val1": rows[i].val1,
                     "val2": rows[i].val2
                 });
             }
