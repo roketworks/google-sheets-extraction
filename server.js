@@ -5,7 +5,7 @@ var port = process.env.PORT || 1337;
 var GoogleSpreadsheet = require("google-spreadsheet");
 
 // spreadsheet key is the long id in the sheets URL 
-var workbook = new GoogleSpreadsheet('1w4Fj7tcW_ifTaPZ4tLYU_LAUap1iVCDywaNFa_dOO18');
+var workbook = new GoogleSpreadsheet('{SHEET ID HERE}');
 var totalSheet;
 var moneySheet;
 
